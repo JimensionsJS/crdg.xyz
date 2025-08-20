@@ -1,7 +1,9 @@
+```html
 <div class="countdown-box" data-interval="10800000" style="text-align:center;background:#000;color:#fff;padding:10px;font-family:Arial;">
   <div style="font-size:1.25em;font-weight:bold;margin-bottom:6px;">Next event starts in...</div>
   <div class="countdown-timer" style="font-size:2.1em;font-family:'Comic Neue',sans-serif;">--:--:--</div>
 </div>
+
 <script>
 (function() {
   function startCountdown(el) {
@@ -27,6 +29,7 @@
   document.querySelectorAll(".countdown-box").forEach(startCountdown);
 })();
 </script>
+```
 
 ---
 
