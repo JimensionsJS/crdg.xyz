@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Recurring Countdown</title>
+<style>
+  body {
+    margin: 0;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  .top {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .bottom {
+    font-size: 2.1em;
+    font-family: "Comic Neue", sans-serif;
+    margin: 6px 0 12px;
+  }
+</style>
+</head>
+<body>
+  <div class="top">Next event starts in...</div>
+  <div class="bottom" id="timer">--:--:--</div>
+
+  <script>
+  (function() {
+    const interval = 3 * 60 * 60 * 1000; // 3 hours
+    const el = document.getElementById("timer");
+
+    function update() {
+      const now = Date.now();
+      const timeInto = now % interval;
+      const timeLeft = interval - timeInto;
+      const h = Math.floor(timeLeft / 3600000);
+      const m = Math.floor((timeLeft % 3600000) / 60000);
+      const s = Math.floor((timeLeft % 60000) / 1000);
+      el.textContent =
+        (h > 0 ? h + "h " : "") +
+        String(m).padStart(2, "0") + "m " +
+        String(s).padStart(2, "0") + "s";
+    }
+    update();
+    setInterval(update, 1000);
+  })();
+  </script>
+</body>
+</html>
