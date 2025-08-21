@@ -1,5 +1,4 @@
-<iframe src="/countdown.html"
-        style="width:100%;max-width:420px;height:100px;border:0;"></iframe> 
+<iframe src="/countdown.html" style="width:100%;max-width:420px;height:100px;border:0;"></iframe>
 
 ---
 
